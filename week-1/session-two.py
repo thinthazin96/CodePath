@@ -70,7 +70,34 @@ def fibonacci_iteration(n):
 
             print(result)
 
-
-
-fibonacci_iteration(6)
+#fibonacci_iteration(6)
 # print(fibonacci_iteration(6))
+
+# Run Time: O(n)
+# Space complexity: O(1) bcz no new data structure is created during the process.
+def isPalindrome(input_str):
+    n = len(input_str)
+    if n == 0:
+        return True
+    return isPalindromeRecursive(input_str, 0, n-1) #Recursive call
+
+def isPalindromeRecursive(input_str, start, end):
+    if start == end:
+        return True
+    
+    #skip non-aphanumeric values
+    while not input_str[start].isalnum():
+        start += 1
+    while not input_str[end].isalnum():
+        end -= 1
+
+    if input_str[start].lower() != input_str[end].lower():
+        return False
+
+    if start < end + 1:
+        return isPalindromeRecursive(input_str, start + 1, end - 1)
+
+    return True
+
+print(isPalindrome("aBba"))
+print(isPalindrome("cookie"))
