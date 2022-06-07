@@ -13,13 +13,15 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 def multiples():
     result = []
     for i in range(1, 1000):
-        if 3 * i == i:
-            result.append(i)
-    
+        result.append(3 * i)
+        result.append(5 * i)
+
+    result = set(result)
     sum = 0
     for i in result:
-        sum = sum + i 
-    
+        if i < 1000:
+            sum = sum + i 
+            print(i)
     return sum
 
 print(multiples())
