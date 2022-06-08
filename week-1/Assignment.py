@@ -24,4 +24,31 @@ def multiples():
             print(i)
     return sum
 
-print(multiples())
+# print(multiples())
+
+#---------Hacker Rank Assignments--------------------------------
+def fizzbuzz(nums):
+    for i in nums:
+        if i % 3 == 0 and i % 5 == 0:
+            print("fizzbuzz")
+        elif i % 3 == 0:
+            print("fizz")
+        elif i % 5 == 0:
+            print("buzz")
+        else:
+            print(i)
+
+# print(fizzbuzz([3,5,15,2,10]))
+
+def fibonacci(n):
+    
+    #create a list with 0 and 1    
+    seq=[0,1]
+    #loop from 2 through n+1
+    for i in range(2,n+1):
+        #Append the sum of i-1 and i-2 to the list
+        seq.append(seq[i-1]+seq[i-2])
+    #return the elemnt of nth index from the list
+    return seq[n]
+
+print(fibonacci(7))
