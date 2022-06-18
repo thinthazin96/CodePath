@@ -44,7 +44,7 @@ def city_path(arr):
         dic[p1].append(p2)
         #Check the 2nd element of the sublist already exist as key in the dictionary
         if p2 not in dic:
-             #if not, set it as a key along with empty list as value
+            #if not, set it as a key along with empty list as value
             dic[p2] = []
         #if yes, add 1st element of the sublist into its value list
         dic[p2].append(p1)
