@@ -11,3 +11,13 @@ class CodePath:
 #created an instance or object of that class called 'p'
 p = CodePath('Fleming')
 p.say_hi() #used the method from the class
+
+#created a class
+class Node:
+    #created a constructor with two parameter and one assign to None value bydefault 
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
+
+first = Node(3)
+print(first.data)
