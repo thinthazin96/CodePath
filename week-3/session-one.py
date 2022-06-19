@@ -21,3 +21,16 @@ class Node:
 
 first = Node(3)
 print(first.data)
+
+"""
+Problem 1: Remove Duplicates from Sorted List
+Given a sorted linked list, delete all duplicates such that each element appear only once.
+Input: 1->1->2  
+Output: 1->2  
+
+Input: 1->1->2->3->3  
+Output: 1->2->3 
+
+Understand:
+
+"""
