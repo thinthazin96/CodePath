@@ -13,17 +13,15 @@ class LinkedList:
 
     #insertion method for the linked list
     def insert(self, data):
-        #create an obj using Node class
-        newNode = Node(data)
-        #Check if the head is None or not, if it is True that head is None.
-        if(self.head):
+        newNode = Node(data) #create an obj using Node class
+        if(self.head): #if it is True that self.head is not None, then
             #assing that head as current node
             current = self.head
-            while(current.next):
+            while(current.next): #if current.next is not None, then
                 current = current.next
-            current.next = newNode
-        else:
-            self.head = newNode
+            current.next = newNode #set the newNode to the current.next node
+        else:#if self.head is None, then
+            self.head = newNode #newnode become self.head
 
     def printLL(self):
         current = self.head
