@@ -33,13 +33,13 @@ class Node:
         self.val = val
         self.next = None
 
+#this function return the length of the nodes
 def getLength(node):
     #initialize the count
     count = 0
     while(node):    # this is same as while(node != None):
         count += 1
         node = node.next    #next node become current node
-    
     return count
 
 def remove_nth_node(head, n):
@@ -47,19 +47,15 @@ def remove_nth_node(head, n):
 
     if head.next == None:
         return None
-    
-    #create reference of the head curr
-    curr = head
-    #initialize the count
-    count = 0
-    while(curr):    # this is same as while(head != None):
-        count += 1
-        curr = curr.next    #next node become current node
-    
-    if n > count:
+    elif n <= 0:
         return None
 
-    deleteIndex = count - n
+    len_nodes = getLength(head)
+    
+    if n > len_nodes:
+        return None
+
+    deleteIndex = len_nodes - n
     temp = head
 
     if deleteIndex == 0:
@@ -77,7 +73,7 @@ head.next.next = Node(3)
 head.next.next.next = Node(4)
 head.next.next.next.next = Node(5)
 
-ll = remove_nth_node(head, 3)
+ll = remove_nth_node(head, 7)
 
 while head:
     print(head.val)
