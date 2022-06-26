@@ -75,13 +75,13 @@ class Tests:
         n2_1.next = n2_2
         print(f"Test 2 - isPalindrome returned: {isPalindrome(n2_1)}, expected: False")
 
-        # # 1 -> 2 -> 3
-        # n3_1 = ListNode(1)
-        # n3_2 = ListNode(2)
-        # n3_3 = ListNode(3)
-        # n3_1.next = n3_2
-        # n3_2.next = n3_3
-        # print(f"Test 3 - isPalindrome returned: {isPalindrome(n3_1)}, expected: False")
+        # 1 -> 2 -> 3
+        n3_1 = ListNode(1)
+        n3_2 = ListNode(2)
+        n3_3 = ListNode(3)
+        n3_1.next = n3_2
+        n3_2.next = n3_3
+        print(f"Test 3 - isPalindrome returned: {isPalindrome(n3_1)}, expected: False")
 
         # # 1 -> 2 -> 1
         # n4_1 = ListNode(1)
