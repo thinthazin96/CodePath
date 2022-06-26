@@ -20,31 +20,29 @@ class ListNode(object):
 
 
 def isPalindrome(node):
-    fullLength = getLength(node)
-
+    fullLength = getLength(node) # fullLength = 3
+    
     if fullLength == 0:
         return True
 
     firstHalf = []
     currentNode = 0
-    while currentNode < (fullLength / 2):
-        firstHalf.append(node.val)
-        node = node.next
-        currentNode += 1
+    while currentNode < (fullLength // 2): # 0 < 1
+        firstHalf.append(node.val) # firstHalf = [1]
+        node = node.next    # node at 1 -> 2
+        currentNode += 1    # currentNode = 1
 
-    # print(firstHalf)
-    # node = node.next
+    # To skip the middle node 2
+    if fullLength % 2 == 1: # 3 % 2 == 1
+        node = node.next    # node at 1 -> 2 -> 3
 
-    while node:
-        currentNode -= 1
-        if node.val != firstHalf[currentNode]:
+
+    while node: # if the node is not None
+        currentNode -= 1 # currentNode = 0th
+        if node.val != firstHalf[currentNode]: # 3 != 1
             return False
         node = node.next
-        
 
-    # if currentNode != 0:
-    #     return False
-    
     return True
 
 
@@ -83,10 +81,10 @@ class Tests:
         n3_2.next = n3_3
         print(f"Test 3 - isPalindrome returned: {isPalindrome(n3_1)}, expected: False")
 
-        # # 1 -> 2 -> 1
-        # n4_1 = ListNode(1)
-        # n4_2 = ListNode(2)
-        # n4_3 = ListNode(1)
-        # n4_1.next = n4_2
-        # n4_2.next = n4_3
-        # print(f"Test 4 - isPalindrome returned: {isPalindrome(n4_1)}, expected: True")
+        # 1 -> 2 -> 1
+        n4_1 = ListNode(1)
+        n4_2 = ListNode(2)
+        n4_3 = ListNode(1)
+        n4_1.next = n4_2
+        n4_2.next = n4_3
+        print(f"Test 4 - isPalindrome returned: {isPalindrome(n4_1)}, expected: True")
