@@ -10,6 +10,9 @@
 # Output: true
 
 
+import re
+
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
@@ -19,6 +22,9 @@ class ListNode(object):
 def isPalindrome(node):
     fullLength = getLength(node)
 
+    if fullLength == 0:
+        return True
+
     firstHalf = []
     currentNode = 0
     while currentNode < (fullLength / 2):
@@ -26,19 +32,20 @@ def isPalindrome(node):
         node = node.next
         currentNode += 1
 
-    print(firstHalf)
+    # print(firstHalf)
     # node = node.next
 
-    # while currentNode > 0:
-    #     if node.val != firstHalf[currentNode]:
-    #         return False
-    #     node = node.next
-    #     currentNode -= 1
+    while node:
+        currentNode -= 1
+        if node.val != firstHalf[currentNode]:
+            return False
+        node = node.next
+        
 
-    if currentNode != 0:
-        return True
-
-    return False
+    # if currentNode != 0:
+    #     return False
+    
+    return True
 
 
 def getLength(node):
@@ -54,15 +61,19 @@ def getLength(node):
 
 class Tests:
     if __name__ == "__main__":
+        #0
+        n0_1 = None
+        print(f"Test 0 - isPalindrome returned: {isPalindrome(n0_1)}, expected: True")
+
         # 1
         n1_1 = ListNode(val=1)
         print(f"Test 1 - isPalindrome returned: {isPalindrome(n1_1)}, expected: True")
 
-        # # 1 -> 2
-        # n2_1 = ListNode(val=1)
-        # n2_2 = ListNode(val=2)
-        # n2_1.next = n2_2
-        # print(f"Test 2 - isPalindrome returned: {isPalindrome(n2_1)}, expected: False")
+        # 1 -> 2
+        n2_1 = ListNode(val=1)
+        n2_2 = ListNode(val=2)
+        n2_1.next = n2_2
+        print(f"Test 2 - isPalindrome returned: {isPalindrome(n2_1)}, expected: False")
 
         # # 1 -> 2 -> 3
         # n3_1 = ListNode(1)
