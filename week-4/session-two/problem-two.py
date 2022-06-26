@@ -26,18 +26,19 @@ def isPalindrome(node):
         node = node.next
         currentNode += 1
 
-    node = node.next
+    print(firstHalf)
+    # node = node.next
 
-    while currentNode > 0:
-        if node.val != firstHalf[currentNode]:
-            return False
-        node = node.next
-        currentNode -= 1
+    # while currentNode > 0:
+    #     if node.val != firstHalf[currentNode]:
+    #         return False
+    #     node = node.next
+    #     currentNode -= 1
 
     if currentNode != 0:
-        return False
+        return True
 
-    return True
+    return False
 
 
 def getLength(node):
