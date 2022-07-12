@@ -33,6 +33,8 @@ Planning:
 Time Complexity: O(N^2)
 Space Complexity: O(N)
 
+Not optimal solution
+
 '''
 def sortStack(input):
     print("Given:", input)
