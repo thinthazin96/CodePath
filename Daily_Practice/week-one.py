@@ -1,4 +1,5 @@
 import math
+from wsgiref import validate
 
 def reverse_string(s):
     
@@ -36,6 +37,37 @@ def is_prime(num):
             return False
     return True
 
-print("Problem 3: Next Prime -> Test 1: ", next_prime(0))
-print("Problem 3: Next Prime -> Test 2: ", next_prime(2))
-print("Problem 3: Next Prime -> Test 3: ", next_prime(23))
+# print("Problem 3: Next Prime -> Test 1: ", next_prime(0))
+# print("Problem 3: Next Prime -> Test 2: ", next_prime(2))
+# print("Problem 3: Next Prime -> Test 3: ", next_prime(23))
+
+def validPalindrome(s):
+        def check_palindrome(s, i, j):
+            while i < j:
+                if s[i] != s[j]:
+                    return False
+                i += 1
+                j -= 1
+            
+            return True
+
+        i = 0
+        j = len(s) - 1
+        while i < j:
+            if not s[i].isalnum():
+                i += 1
+                continue
+            if not s[j].isalnum():
+                j -= 1
+                continue
+
+            # Found a mismatched pair - try both deletions
+            if s[i].lower() != s[j].lower():
+                return check_palindrome(s, i, j - 1) or check_palindrome(s, i + 1, j)
+            i += 1
+            j -= 1
+        
+        return True
+
+print(validPalindrome("A man, a plan, a canal: Panama"))
+print(validPalindrome("race a car"))
