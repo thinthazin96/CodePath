@@ -16,8 +16,8 @@ def substring(first_str, sub_str):
             return True
     return False
 
-# print("Problem 2: Substring -> Test 1: ", substring("laboratory", "rat"))
-# print("Problem 2: Substring -> Test 2: ", substring("cat", "meow"))
+# print("Substring | Test 1: ", substring("laboratory", "rat"))
+# print("Substring | Test 2: ", substring("cat", "meow"))
 
 '''
 Given a number, return the next smallest prime number.
@@ -97,12 +97,12 @@ def appear_once(arr):
             continue
     return res
 
-# print("Appear Once: Test 1 => ", appear_once([1,1,2,2,3,4,4]) == [3])
-# print("Appear Once: Test 2 => ", appear_once([1,2,2,3,4,4]) == [1,3])
-# print("Appear Once: Test 3 => ", appear_once([1,2,3,4]) == [1,2,3,4])
-# print("Appear Once: Test 4 => ", appear_once([0]) == [0])
-# print("Appear Once: Test 5 => ", appear_once([]) == [])
-# print("Appear Once: Test 6 => ", appear_once([1,1,2,2,3,3,4,4]) == [])
+# print("Appear Once | Test 1 :", appear_once([1,1,2,2,3,4,4]) == [3])
+# print("Appear Once | Test 2 :", appear_once([1,2,2,3,4,4]) == [1,3])
+# print("Appear Once | Test 3 :", appear_once([1,2,3,4]) == [1,2,3,4])
+# print("Appear Once | Test 4 :", appear_once([0]) == [0])
+# print("Appear Once | Test 5 :", appear_once([]) == [])
+# print("Appear Once | Test 6 :", appear_once([1,1,2,2,3,3,4,4]) == [])
 
 def count_gem(gems, stones):
 
@@ -130,12 +130,12 @@ def count_gem(gems, stones):
         else:
             return None
         
-# print("Gem_count in stone: Test 1 =>", count_gem(["G", "a"], ["g","g","g","G","A","a","a"]) == 3)
-# print("Gem_count in stone: Test 2 =>", count_gem([], ["g","g","g","G","A","a","a"]) == None)
-# print("Gem_count in stone: Test 3 =>", count_gem(["G", "a"], []) == None)
-# print("Gem_count in stone: Test 4 =>", count_gem(["G", "a"], ["g","g","g","A"]) == None)
-# print("Gem_count in stone: Test 5 =>", count_gem(["G", "a"], ["G"]) == 1)
-# print("Gem_count in stone: Test 6 =>", count_gem(["G"], ["G"]) == 1)
+# print("Gem_count in stone | Test 1 :", count_gem(["G", "a"], ["g","g","g","G","A","a","a"]) == 3)
+# print("Gem_count in stone | Test 2 :", count_gem([], ["g","g","g","G","A","a","a"]) == None)
+# print("Gem_count in stone | Test 3 :", count_gem(["G", "a"], []) == None)
+# print("Gem_count in stone | Test 4 :", count_gem(["G", "a"], ["g","g","g","A"]) == None)
+# print("Gem_count in stone | Test 5 :", count_gem(["G", "a"], ["G"]) == 1)
+# print("Gem_count in stone | Test 6 :", count_gem(["G"], ["G"]) == 1)
 
 
 def reverse_word(arr):
@@ -201,3 +201,30 @@ def post_fix(s):
 # print("PostFix | Test 1 :", post_fix("5 1 2 + 4 * + 3 -") == 14)
 # print("PostFix | Test 2 :", post_fix("5 +") == 5)
 # print("PostFix | Test 3 :", post_fix("1") == 1)
+
+'''
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+
+Input: nums = [3,3], target = 6
+Output: [0,1]
+
+Planning:
+1) loop through the list and find the compliment.
+2) create a dictionary and store the current value and its index if the compliment does not exist.
+3) if yes, return the current index and the value of the compliment from the dictionary.
+'''
+def twoSum(arr, target):
+
+    d = {}
+    for i in range(len(arr)):
+        compliment = target - arr[i]
+        if compliment not in d:
+            d[arr[i]] = i
+        else:
+            return d[compliment],i
+
+print("Two Sum | Test 1: ", twoSum([1,2,5,7],9))
