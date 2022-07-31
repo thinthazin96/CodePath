@@ -227,4 +227,5 @@ def twoSum(arr, target):
         else:
             return d[compliment],i
 
-print("Two Sum | Test 1: ", twoSum([1,2,5,7],9))
+print("Two Sum | Test 1: ", twoSum([1,2,5,7],9) == (1,3))
+print("Two Sum | Test 2: ", twoSum([3,3],6) == (0,1))
