@@ -26,18 +26,73 @@ Match: Preorder is the most suitable algorithm for this case
 Time Complexity: O(N), where N is the number of nodes in both trees
 Space Complexity: O(NlogN) for balanced tree, O(N) for unbalanced tree (space is used for the recursion stack)
 '''
-class BinaryTree:
+class Node:
     def __init__(self, val, left = None, right = None):
         self.val = val
         self.left = left
         self.right = right
 
 def is_same_tree(p, q):
-    if not p and not q:
+
+    if not p and not q: 
         return True
-    
-    if not p or not q:
+
+    if not p or not q: #if one of them is empty, return False
         return False
 
-    if p.val != q.val:
+    if p.val != q.val: #if the value of the tree is different, return False
         return False
+
+    return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)
+
+def main():
+    tests = [
+    {
+        'input' : (Node(1), Node(1)),
+        'output' : True
+    },
+    {
+        'input' : (None , None),
+        'output' : True
+    },
+    {
+        'input' : (None , Node(1)),
+        'output' : False
+    },
+    {
+        'input' : (Node(1) , None),
+        'output' : False
+    },
+    {
+        'input' : (Node(1, Node(2), Node(3)) , Node(1, Node(2), Node(3))),
+        'output' : True
+    },
+    {
+        'input' : (Node(1, Node(2)) , Node(1, Node(2))),
+        'output' : True
+    },
+    {
+        'input' : (
+            Node(1, None, Node(3)), 
+            Node(1, None, Node(3))),
+        'output' : True
+    },
+        {
+        'input' : (
+            Node(1, Node(2)), 
+            Node(1, None, Node(3))),
+        'output' : False
+    },
+    {
+        'input' : (
+            Node(1, Node(2), Node(3)) , 
+            Node(1, Node(2), Node(4))),
+        'output' : False
+    },
+    ]
+    for i in range(len(tests)):
+        print(f'Test {i+1} Pass:', is_same_tree(*tests[i]['input']) == tests[i]['output'])
+
+main()
+
+
