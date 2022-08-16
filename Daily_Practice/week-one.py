@@ -225,6 +225,6 @@ def twoSum(arr, target):
         if compliment not in d:
             d[arr[i]] = i
         else:
-            return d[compliment],i
+            return [d[compliment],i]
 
 print("Two Sum | Test 1: ", twoSum([1,2,5,7],9))
