@@ -39,8 +39,8 @@ def validAnagram(s, t):
         
     for key, val in dicS.items():
         if key in dicT:    
-         if val != dicT[key]:
-            return False
+            if val != dicT[key]:
+                return False
         else:
             return False
     return True
