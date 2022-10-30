@@ -1,6 +1,7 @@
 '''
-Two Sum II
-https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+Two Sum II: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+
+Time Complexity: O(N) due to sorted array
 '''
 def two_pointer_II(numbers, target):
     left = 0
