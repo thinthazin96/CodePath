@@ -1,9 +1,12 @@
 '''
 Three Sum: https://leetcode.com/problems/3sum/
+
+Time Complexity: O(NlogN + N^2) --> O(N^2) over all.
+
 '''
 def threeSum(nums):
         res = []
-        nums.sort()
+        nums.sort()   # Time Complexity sorting is O(NlogN)
         
         for i in range(len(nums)):
             if nums[i] > 0:
@@ -12,8 +15,7 @@ def threeSum(nums):
                 twoSumII(nums, i, res)
         return res
                 
-            
-def twoSumII(nums, i, res):
+def twoSumII(nums, i, res):  # Time Complexity: O(N)
     left = i + 1
     right = len(nums) - 1
     
