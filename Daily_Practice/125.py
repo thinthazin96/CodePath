@@ -2,6 +2,7 @@
 Valid Palindrome
 https://leetcode.com/problems/valid-palindrome/
 
+Time Complexity: O(N) bcz we have to loop through the whole string.
 '''
 def valid_palindrome(s):
     
