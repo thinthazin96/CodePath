@@ -18,19 +18,20 @@ def maxArea(height):
 
     #-------Two Pointer Method: Time Complexity: O(N)--------
 
-    res = 0
+    max_area = 0
     l = 0
     r = len(height) - 1
     
     while l < r:
+        #It's only beneficial to move short line than the long line. that's why min function is called.
         area = (r - l) * min(height[l], height[r]) # area = width * height
-        res = max(res, area)  # keep track of the max area 
+        max_area = max(max_area, area)  # keep track of the max area 
 
         if height[l] < height[r]:
             l += 1
-        else:
+        else:   #if the left > right or left == right:
             r -= 1
 
-    return res
+    return max_area
 
 print("Test 1 || ", maxArea([1,8,6,2,5,4,8,3,7]) == 49)
