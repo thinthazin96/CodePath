@@ -1,7 +1,7 @@
 '''
 36. Valid Sudoku: https://leetcode.com/problems/valid-sudoku/
 
-Time Complexity: 
+Time Complexity: O(1)
 '''
 import collections
 
