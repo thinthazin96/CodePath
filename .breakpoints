@@ -1,3 +1,20 @@
 {
-  "files": {}
+  "files": {
+    "Daily_Practice/1.py": [
+      {
+        "id": "efba2335-f51f-4e10-9826-f8031037a37c",
+        "line": 7,
+        "version": 1,
+        "index": 96
+      }
+    ],
+    "Daily_Practice/36.py": [
+      {
+        "id": "55cec6fb-307d-4126-86ef-ac925f63dcb5",
+        "line": 8,
+        "version": 810,
+        "index": 113
+      }
+    ]
+  }
 }

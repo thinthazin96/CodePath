@@ -12,7 +12,7 @@ def valid_palindrome(s):
     while l < r:
         if not s[l].isalnum():
             l += 1
-            continue            #returns the control to the beginning of the while loop
+            continue
         if not s[r].isalnum():
             r -= 1
             continue

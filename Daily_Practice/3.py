@@ -1,9 +1,7 @@
 '''
 Longest Substring Without Repeating Characters: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
-Time Complexity: O(N) because of Set.
-
-This problem mainly adding and removing from the Set.
+Time Complexity: O(N)
 '''
 def lengthOfLongestSubstring(s):
     subString = set()
@@ -16,9 +14,8 @@ def lengthOfLongestSubstring(s):
             l += 1
         
         subString.add(s[r])
-        res = max(res, r - l + 1)
+        res = max(res, r - l)
     return res
 
-# print("Longest Substring Without Repeating Characters: Test 1 || ", lengthOfLongestSubstring("abcabcbb") == 3)
-# print("Longest Substring Without Repeating Characters: Test 2 || ", lengthOfLongestSubstring("bbbbb") == 1)
-print("Longest Substring Without Repeating Characters: Test 3 || ", lengthOfLongestSubstring("pwwkew") == 3)
+print("Longest Substring Without Repeating Characters: Test 1 || ", lengthOfLongestSubstring("abcabcbb") == 3)
+print("Longest Substring Without Repeating Characters: Test 2 || ", lengthOfLongestSubstring("bbbbb") == 1)
