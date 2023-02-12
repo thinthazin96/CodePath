@@ -11,10 +11,10 @@ class TreeNode:
         
 def isSameTree(p, q):
     '''
-    1. Recursively traverse the tree using Pre-order 
-    1. if p.val not same as q.val, return False.
-    2. if both p and q are empty, return True.
+    1. Recursively traverse the tree using Pre-order  
+    2. Base case: if both p and q are empty, return True.
     3. if one of p or q is empty, return False.
+    4. if p.val not same as q.val, return False.
     5. After tree is fully traversed and no difference is found, return True.
     '''
     if not p and not q: #base case
